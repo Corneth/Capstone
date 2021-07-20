@@ -1,0 +1,106 @@
+
+
+<SignUp>:
+    name:'SignUp'
+    id: signup
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'top'
+            MDToolbar:
+                id: toolbar
+                title: 'Healthy Living'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'
+                left_action_items: [[ 'menu' , lambda x: app.toggle_nav_drawer()]]
+                right_action_items: [["dots-vertical", lambda x: app.callback()]]
+    MDCard:
+        background: 'Pictures/healthy-food.jpg'
+        size: 300,400
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+
+
+        MDLabel:
+            id:Sign_up_label
+            text:'Sign up'
+            theme_text_color: "Custom"
+            text_color: .13,.55,.13,1
+            font_size: 40
+            halign:'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+            markup: True
+        MDTextFieldRound:
+            id:name
+            md_bg_color: app.theme_cls.bg_dark
+            normal_color: app.theme_cls.accent_color
+            hint_text: 'Name'
+            color_active: 1,1,1,1
+            theme_text_color: 1,1,1,1
+            helper_text: "Name"
+            helper_text_mode:'on_focus'
+            icon_right: 'human'
+            size_hint_x: None
+            width:200
+            font_size: 18
+            pos_hint: {"center_x": .5}
+            focus: True
+            on_text_validate: user_id.focus = True
+
+
+        MDTextFieldRound:
+            color_mode: 'accent'
+            id: user_id
+            md_bg_color: [0,0,0,0]
+            normal_color: app.theme_cls.accent_color
+            color_active: 1,1,1,1
+            hint_text:'User Id'
+            icon_right:'key'
+            size_hint_x: None
+            theme_text_color: "custom"
+            text_color: 1,1,1,1
+            width:200
+            font_size:18
+            pos_hint: {'center_x': .5}
+            multiline: False
+            on_text_validate: pasw.focus = True
+
+        MDTextFieldRound:
+            color_mode: 'accent'
+            id: pasw
+            md_bg_color: [0,0,0,0]
+            normal_color: app.theme_cls.accent_color
+            color_active: 1,1,1,1
+
+            hint_text:'Password'
+            icon_right:'eye-off'
+            size_hint_x: None
+            theme_text_color: "custom"
+            text_color: 1,1,1,1
+            width:200
+            font_size:18
+            pos_hint: {'center_x': .5}
+            password: True
+            multiline: False
+            on_text_validate: root.check_user()
+
+        MDFillRoundFlatButton:
+            id: signup
+            text: "Signup"
+            font_size:12
+            pos_hint: {'center_x': .5}
+            on_press: root.check_user()
+
+        MDFillRoundFlatButton:
+            id: 'return'
+            text: "Back"
+            font_size:12
+            pos_hint: {'center_x': .5}
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'Login'

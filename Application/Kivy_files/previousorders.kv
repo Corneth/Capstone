@@ -1,0 +1,61 @@
+<PreviousOrder>:
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'top'
+            MDToolbar:
+                id: toolbar
+                title: 'Healthy Living'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'
+                left_action_items: [[ 'menu' , lambda x: app.toggle_nav_drawer()]]
+                right_action_items: [["dots-vertical", lambda x: app.callback()]]
+
+
+    MDCard:
+        background: 'Pictures/healthy-food.jpg'
+        size: 300,400
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+        MDLabel:
+            id:prev_order_lbl
+            text:"Previous Order #'s"
+            theme_text_color: "Custom"
+            text_color: .13,.55,.13,1
+            font_size: 25
+            halign:'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+            markup: True
+        ScrollView:
+            MDList:
+                id:prev_container
+        MDLabel:
+            id: order_preview_lbl
+            text:' Order Info'
+            theme_text_color: "Custom"
+            text_color: .13,.55,.13,1
+            font_size: 25
+            halign:'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+            markup: True
+        ScrollView:
+            MDList:
+                id:order_preview
+
+
+
+        MDFillRoundFlatButton:
+            id: back_btn
+            text: "Back"
+            font_size:12
+            pos_hint: {'center_x': .5}
+            on_press:
+                root.manager.current = 'menu'
+                root.manager.transition.direction = 'right'

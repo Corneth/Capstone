@@ -1,0 +1,145 @@
+<Recommendation>:
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'top'
+            MDToolbar:
+                id: toolbar
+                title: 'Healthy Living'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'
+                left_action_items: [[ 'menu' , lambda x: app.toggle_nav_drawer()]]
+                right_action_items: [["dots-vertical", lambda x: app.callback()]]
+
+
+    MDCard:
+        background: 'Pictures/healthy-food.jpg'
+        size: 300,400
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+        GridLayout:
+            cols: 2
+            spacing:5
+            Label:
+                id:lab_1
+                text: 'Product 1'
+                size_hint_y:None
+                text_size: self.width,None
+                height:self.texture_size[1]
+
+            MDTextFieldRound:
+                spacing:5
+                id: rating_1
+                md_bg_color: app.theme_cls.bg_dark
+                normal_color: app.theme_cls.accent_color
+                hint_text: 'Rating'
+                text:''
+                helper_text: 'Please input a rating'
+                helper_text_mode:'on_focus'
+                color_active: 1,1,1,1
+                multiline: False
+                on_text_validate:
+                    rating_2.focus = True
+
+
+            Label:
+                id:lab_2
+                text: 'Product 2'
+                size_hint_y:None
+                text_size: self.width,None
+                height:self.texture_size[1]
+
+            MDTextFieldRound:
+                spacing:5
+                id: rating_2
+                md_bg_color: app.theme_cls.bg_dark
+                normal_color: app.theme_cls.accent_color
+                hint_text: 'Rating'
+                text:''
+                helper_text: 'Please input a rating'
+                helper_text_mode:'on_focus'
+                color_active: 1,1,1,1
+                multiline: False
+                on_text_validate:
+                    rating_3.focus = True
+            Label:
+                id:lab_3
+                text:'Product 3'
+                size_hint_y:None
+                text_size: self.width,None
+                height:self.texture_size[1]
+
+            MDTextFieldRound:
+                spacing:5
+                id: rating_3
+                md_bg_color: app.theme_cls.bg_dark
+                normal_color: app.theme_cls.accent_color
+                hint_text: 'Rating'
+                text:''
+                helper_text: 'Please input a rating'
+                helper_text_mode:'on_focus'
+                color_active: 1,1,1,1
+                multiline: False
+                on_text_validate:
+                    rating_4.focus = True
+            Label:
+                id: lab_4
+                text:'Product 4'
+                size_hint_y:None
+                text_size: self.width,None
+                height:self.texture_size[1]
+
+            MDTextFieldRound:
+                spacing:5
+                id: rating_4
+                md_bg_color: app.theme_cls.bg_dark
+                normal_color: app.theme_cls.accent_color
+                hint_text: 'Rating'
+                text:''
+                helper_text: 'Please input a rating'
+                helper_text_mode:'on_focus'
+                color_active: 1,1,1,1
+                multiline: False
+                on_text_validate:
+                    rating_5.focus = True
+            Label:
+                id: lab_5
+                text:'Product 5'
+
+                size_hint_y:None
+                text_size: self.width,None
+                height:self.texture_size[1]
+
+            MDTextFieldRound:
+                spacing:5
+                id: rating_5
+                md_bg_color: app.theme_cls.bg_dark
+                normal_color: app.theme_cls.accent_color
+                hint_text: 'Rating'
+                text:''
+                helper_text: 'Please input a rating'
+                helper_text_mode:'on_focus'
+                color_active: 1,1,1,1
+                multiline: False
+                on_text_validate:
+                    root.get_recommendations()
+
+            MDFillRoundFlatButton:
+                id: back
+                text: 'Back'
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+
+            MDFillRoundFlatButton:
+                id: Submit
+                text: 'Get recommendations'
+                on_press:
+                    root.get_recommendations()
+
+        ScrollView:
+            MDList:
+                id: Recommendations

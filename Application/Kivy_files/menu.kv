@@ -1,0 +1,80 @@
+<MainMenu>:
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'top'
+            MDToolbar:
+                id: toolbar
+                title: 'Healthy Living'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'
+                left_action_items: [[ 'menu' , lambda x: app.toggle_nav_drawer()]]
+                right_action_items: [["dots-vertical", lambda x: app.callback()]]
+
+
+    MDCard:
+        background: 'Pictures/healthy-food.jpg'
+        size: 300,400
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+
+        MDLabel:
+            id:menu
+            text:'Main Menu'
+            theme_text_color: "Custom"
+            text_color: .13,.55,.13,1
+            font_size: 25
+            halign:'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+            padding_y: 15
+            markup: True
+
+
+        MDFillRoundFlatButton:
+            id: new_order
+            text: "New List"
+            font_size:12
+            pos_hint: {'center_x': .5}
+            on_press:
+                root.manager.current = 'neworder'
+
+        MDFillRoundFlatButton:
+            id: previous_odr
+            text: "Previous Orders"
+            font_size:12
+            pos_hint: {'center_x': .5}
+            on_press:
+                root.manager.current = 'previousorders'
+
+        MDFillRoundFlatButton:
+            id: Recommend
+            text: 'Recommendations'
+            font_size:12
+            pos_hint: {'center_x':.5}
+            on_press:
+                root.manager.current = 'Recommendation'
+        MDFillRoundFlatButton:
+            id: LogOut
+            text: "Logout"
+            font_size:12
+            pos_hint: {'center_x': .5}
+            on_press:
+                root.manager.transition.direction = 'up'
+                root.manager.current = 'Login'
+        Widget:
+            size_hint_y: None
+            height:20
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'bottom'
+            MDToolbar:
+                id: toolbar
+                halign:'center'
+                title: '© Healthy living 2021'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'

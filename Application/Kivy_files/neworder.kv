@@ -1,0 +1,90 @@
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+<NewOrder>:
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'top'
+            MDToolbar:
+                id: toolbar
+                title: 'Healthy Living'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'
+                left_action_items: [[ 'menu' , lambda x: app.toggle_nav_drawer()]]
+                right_action_items: [["dots-vertical", lambda x: app.callback()]]
+
+
+    MDCard:
+        background: 'Pictures/healthy-food.jpg'
+        size: 300,400
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        padding:25
+        spacing:5
+        orientation:'vertical'
+
+        MDTextFieldRound:
+            spacing:5
+            id: search_field
+            md_bg_color: app.theme_cls.bg_dark
+            normal_color: app.theme_cls.accent_color
+            hint_text: 'Item name'
+            text:''
+            helper_text: 'Please input food product'
+            helper_text_mode:'on_focus'
+            color_active: 1,1,1,1
+            multiline: False
+            on_text_validate:
+                root.search()
+
+
+
+
+
+
+        BoxLayout:
+            spacing:5
+            Label:
+                text: 'Qty'
+                size_hint_x:.1
+            Label:
+                text: 'ItemCode'
+                size_hint_x:.2
+            Label:
+                text:'Product Name'
+                size_hint_x:.3
+        ScrollView:
+            spacing:5
+            GridLayout:
+                size_hint_y: None
+                size_hint_x:1
+                id: products
+                cols:1
+        GridLayout:
+            size_hint_y: None
+            size_hint_x:1
+            cols:2
+            MDFillRoundFlatButton:
+                id: back_btn
+                text: "Back"
+                font_size:12
+                pos_hint: {'center_x': .5}
+                on_press:
+                    root.manager.current = 'menu'
+                    root.manager.transition.direction = 'right'
+            MDFillRoundFlatButton:
+                id: search_btn
+                text: 'Search'
+                font_size:12
+                pos_hint: {'center_x': .5}
+                on_press:
+                    root.search()
+    BoxLayout:
+        AnchorLayout:
+            anchor_y: 'bottom'
+            MDToolbar:
+                id: toolbar
+
+                title: '© Healthy living 2021'
+                md_bg_color: app.theme_cls.accent_color
+                background_palette: 'Primary'
+                background_hue: '500'

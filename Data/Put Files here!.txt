@@ -1,0 +1,1 @@
+Put the files from https://www.kaggle.com/c/instacart-market-basket-analysis/data in this folder unzipped
