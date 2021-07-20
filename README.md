@@ -28,8 +28,8 @@
         <li><a href="#scrub">Scrub</a></li>
         <li><a href="#obtain">Explore</a></li>
         <li><a href="#model">Model</a></li>
-        <li><a href="#application">Application</a></li>
       </ul>
+      <li><a href="#application">Application</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href = "#future-works">Future Works</a></li>
       <li><a href="#contact">Contact</a></li>
