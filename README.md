@@ -1,4 +1,4 @@
-<img src ="Photos/Capstone_top_photo">
+![Capstone_top_photo](Capstone_top_photo.jpeg)
 
 <h1 align = "center">  InstaCart Marketbasket Analysis </h1>
 <h2 align = "center"> By: Thomas Cornett </h2>
@@ -79,6 +79,9 @@ The data was pretty clean when it came to errors in the data,which is nice, not 
 
 ## Explore
 I noticed that in the data there was some interesting statistics.The days since prior order column shows that a lot of people would order the most in the first week of the month or the last day of the month or the very end of the month. There was also a trend in the time of day that the shoppers would go and order their products which surprisingly shows that users ordered during working hours, between 9am and 5pm. That is surprising to me considering that most people would be in work during those times, but it quickly declines in orders before and after that timeframe. Another trend was the day of the week that users tended to buy things, this wasn't really surprising considering that most people would want to shop at the beginning of the week. After that I took a look into clustering the data based on the volume of the aisles and the departments and used that to figure out the percentages each area did in sales.
+![Departments](https://github.com/Corneth/Market-Basket-Analysis/blob/main/Pictures/Departments.png)
+![Products](https://github.com/Corneth/Market-Basket-Analysis/blob/main/Pictures/Products.png)
+
 
 
 ## Model
@@ -103,7 +106,3 @@ Even though it is difficult to determine what is the best way for market researc
 
 ## Contact
 For additional information, contact me at: thmscrntt33@gmail.com
-
-
-
-## Acknowledgements
