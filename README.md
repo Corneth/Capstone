@@ -1,5 +1,6 @@
-![Capstone_top_photo](Capstone_top_photo.jpeg)
-
+<p align = "center">
+<img src="Capstone_top_photo.jpeg" />
+</p>
 <h1 align = "center">  InstaCart Marketbasket Analysis </h1>
 <h2 align = "center"> By: Thomas Cornett </h2>
 
@@ -89,8 +90,10 @@ I built a simple python recommendation system based off of the times a user purc
 
 ## Application
 After a satisfactory model was built I began to develop an App that a store can use as a simple list maker and recommendation system. With the resources I have available I was only able to use 50,000 points from the dataset for the recommendation system built into it or else it takes about 10 minutes to run before you get the recommended products. It is built around the Kivy framework, which is considered a build once deploy everywhere.
+<p align="center">
+  <img src="Pictures/Application.JPG" />
+</p>
 
-![Application](Pictures/Application.JPG)
 
 ## Conclusion
 Even though it is difficult to determine what is the best way for market research to find trends I feel that with the data I was given that:
