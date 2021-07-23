@@ -34,6 +34,7 @@
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href = "#future-works">Future Works</a></li>
       <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowlegements </a></li>
     <li><a href= "#sources"> Sources</a></li>
     </li>
   </ol>
@@ -112,6 +113,9 @@ Even though it is difficult to determine what is the best way for market researc
 ## Contact
 For additional information, contact me at: thmscrntt33@gmail.com
 
+## Acknowledgements
+* https://github.com/melodygr/grocery_recommendation for recommendation system with use of the diverse recommendations
+* 
 ## Sources 
 * U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.
 * Instacart for open sourcing their data on kaggle.
