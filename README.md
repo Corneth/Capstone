@@ -34,7 +34,7 @@
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href = "#future-works">Future Works</a></li>
       <li><a href="#contact">Contact</a></li>
-    <li><a href= "#sources"> Acknowledgements and sources</a></li>
+    <li><a href= "#sources"> Sources</a></li>
     </li>
   </ol>
 </details>
